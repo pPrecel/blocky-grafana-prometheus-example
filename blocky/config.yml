@@ -1,22 +1,35 @@
 upstream:
   externalResolvers:
-    - udp:46.182.19.48
-    - udp:80.241.218.68
-conditional:
-  mapping:
-    fritz.box: udp:192.168.178.1
+    # Quad9
+    - 9.9.9.9
+    - 149.112.112.112
+    # OpenDNS
+    - 208.67.222.222
+    - 208.67.220.220
+    # AdGuard DNS
+    - 94.140.14.140
+    - 94.140.14.141
 blocking:
   blackLists:
-    ads:
-      - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+    malwares:
+      - https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt
+      - https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Ultimate.Hosts.Blacklist/master/hosts/hosts0
+      - https://raw.githubusercontent.com/Ultimate-Hosts-Blacklist/Ultimate.Hosts.Blacklist/master/hosts/hosts1
       - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/data/malwaredomainlist.com/hosts
       - https://mirror1.malwaredomains.com/files/justdomains
-      - http://sysctl.org/cameleon/hosts
-      - https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
+    trackers:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/data/yoyo.org/hosts
       - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+    adds:
+      - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+      - http://sysctl.org/cameleon/hosts
   clientGroupsBlock:
     default:
-      - ads
+      - malwares
+      - trackers
+      # - adds
   blockType: zeroIp
 prometheus:
   enable: true

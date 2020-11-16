@@ -1,6 +1,19 @@
 version: "2.1"
 
 services:
+  generic-resource-monitor:
+    image: pprecel/generic-resource-monitor
+    container_name: generic-resource-monitor
+    restart: always
+    ports:
+      - "4040:4040"
+    environment:
+      - CONFIG_FILENAME=/app/config.yaml
+    volumes:
+      - ./generic-resource-monitor/config.yaml:/app/config.yaml
+      - /sys/class/thermal/thermal_zone0/hwmon0/temp1_input:/app/temp1_input
+      - /proc/meminfo:/app/meminfo
+      - /proc/stat:/app/stat
   blocky:
     image: spx01/blocky
     container_name: blocky

@@ -1,0 +1,108 @@
+serverPort: ":4040"
+serverAddress: "/metrics"
+
+entries:
+# temp
+  - filename: "/app/temp1_input"
+    timestamp: 2.5
+    Metrics:
+    - name: "host_sys_cpu_temp"
+      description: "Temperature of the raspberry pi main CPU"
+
+  # memory
+  - filename: "/app/meminfo"
+    timestamp: 1
+    Metrics:
+    - name: "host_sys_mem_total"
+      lineNumber: 0
+      elemNumber: 1
+    - name: "host_sys_mem_available"
+      lineNumber: 2
+      elemNumber: 1
+
+  # cpu
+  - filename: "/app/stat"
+    timestamp: 0.5
+    Metrics:
+    - name: "host_sys_cpu0_stat_user"
+      lineNumber: 0
+      elemNumber: 1
+    - name: "host_sys_cpu0_stat_nice"
+      lineNumber: 0
+      elemNumber: 2
+    - name: "host_sys_cpu0_stat_system"
+      lineNumber: 0
+      elemNumber: 3
+    - name: "host_sys_cpu0_stat_idle"
+      lineNumber: 0
+      elemNumber: 4
+    - name: "host_sys_cpu0_stat_iowait"
+      lineNumber: 0
+      elemNumber: 5
+    - name: "host_sys_cpu0_stat_irq"
+      lineNumber: 0
+      elemNumber: 6
+    - name: "host_sys_cpu0_stat_softirq"
+      lineNumber: 0
+      elemNumber: 7
+    - name: "host_sys_cpu0_stat_steal"
+      lineNumber: 0
+      elemNumber: 8
+    - name: "host_sys_cpu0_stat_guest"
+      lineNumber: 0
+      elemNumber: 9
+    - name: "host_sys_cpu0_stat_guest_nice"
+      lineNumber: 0
+      elemNumber: 10
+
+  # # cpu0
+  # - name: "host_sys_cpu0_stat_user"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 1
+  # - name: "host_sys_cpu0_stat_nice"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 2
+  # - name: "host_sys_cpu0_stat_system"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 3
+  # - name: "host_sys_cpu0_stat_idle"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 4
+  # - name: "host_sys_cpu0_stat_iowait"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 5
+  # - name: "host_sys_cpu0_stat_irq"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 6
+  # - name: "host_sys_cpu0_stat_softirq"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 7
+  # - name: "host_sys_cpu0_stat_steal"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 8
+  # - name: "host_sys_cpu0_stat_guest"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 9
+  # - name: "host_sys_cpu0_stat_guest_nice"
+  #   timestamp: 0.5
+  #   filename: "/app/stat"
+  #   lineNumber: 0
+  #   elemNumber: 10
